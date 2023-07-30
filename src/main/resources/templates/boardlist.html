@@ -22,23 +22,6 @@
                     <div class="num" th:text="${board.id}"></div>
                     <div class="title"><a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a></div>
                 </div>
-
-<!--                <table>-->
-<!--                    <thead>-->
-<!--                    <tr>-->
-<!--                        <th>글번호</th>-->
-<!--                        <th>제목</th>-->
-<!--                    </tr>-->
-<!--                    </thead>-->
-<!--                    <tbody>-->
-<!--                    <tr th:each="board : ${list}">-->
-<!--                        <td th:text="${board.id}"></td>-->
-<!--                        <td>-->
-<!--                            <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a>-->
-<!--                        </td>-->
-<!--                    </tr>-->
-<!--                    </tbody>-->
-<!--                </table>-->
             </div>
             <div class="board_page">
                 <th:block th:each="page : ${#numbers.sequence(staPage, finPage)}">
