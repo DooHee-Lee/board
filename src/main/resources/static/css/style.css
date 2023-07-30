@@ -120,9 +120,8 @@ a {
 }
 
 .board_body {
-    margin-top: 5px;
-    width: 1000px;
-    margin: 100px auto;
+    width: 100%;
+    border-top: 2px solid #000;
 }
 
 .board_body input {
@@ -135,4 +134,14 @@ a {
     width : 100%;
     margin-top : 10px;
     min-height : 300px;
+}
+
+.board_comment {
+      margin-top: 50px;
+      text-align: left;
+      font-size: 1.3rem;
+}
+
+.board_comment_list{
+      margin-top: 5px;
 }

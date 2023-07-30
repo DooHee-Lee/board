@@ -20,7 +20,7 @@
                 </div>
                 <div th:each="board : ${list}">
                     <div class="num" th:text="${board.id}"></div>
-                    <div class="title"><a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a></div>
+                    <div class="title"><a th:text="${board.title}" th:href="@{/board/view/{id}(id = ${board.id})}"></a></div>
                 </div>
             </div>
             <div class="board_page">

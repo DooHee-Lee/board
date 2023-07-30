@@ -5,10 +5,7 @@ import com.study.board.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class BoardService {
@@ -24,7 +21,7 @@ public class BoardService {
 
     //게시글 리스트 조회
     public Page<Board> boardList(Pageable pageable){
-        //return boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+
         return boardRepository.findAll(pageable);
     }
 

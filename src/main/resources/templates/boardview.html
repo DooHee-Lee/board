@@ -14,17 +14,27 @@
         </div>
         <div class="board_body_wrap">
             <div class="board_body">
-                <input name="title" type="text" th:value="${board.title}" readonly>
-                <textarea name="content" th:text="${board.content}" readonly></textarea>
-            </div>
-            <div class="board_comment">
-                <textarea name="name" readonly>작성자</textarea>
-                <textarea name="comment" readonly>댓글내용</textarea>
+                    <input name="title" type="text" th:value="${board.title}" readonly>
+                    <textarea name="content" th:text="${board.content}" readonly></textarea>
             </div>
             <div class="bt_wrap">
                 <a class="on" th:href="@{/board/delete(id=${board.id})}">글삭제</a>
                 <a class="on" th:href="@{/board/modify/{id}(id=${board.id})}">글수정</a>
                 <a class="on" href="/board/list">글목록</a>
+            </div>
+            <div class="board_comment">
+                <form th:action="@{/board/registcomment/{id}(id = ${board.id})}" method="post">
+                    <textarea name="commentname" >작성자</textarea>
+                    <textarea name="commentcontent" >댓글내용</textarea>
+                    <button type="submit">등록</button>
+                </form>
+            </div>
+            <div class="board_comment_list">
+                <div th:each="boardcomment : ${boardcommentlist}">
+                    <div class="comName" th:text="${boardcomment.commentname}"></div>
+                    <div class="comContent" th:text="${boardcomment.commentcontent}"></div>
+                    <div class="comDate" th:text="${boardcomment.registdate}"></div>
+                </div>
             </div>
         </div>
     </div>
